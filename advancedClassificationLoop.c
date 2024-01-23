@@ -1,34 +1,50 @@
-
 #include <stdio.h>
 
+// Declare functions
+int numberD(int a);
+int power(int numberD, int digit);
+int isArmstrong(int a);
+int isPalindrome(int a);
 
-/* will return if a number is Armstrong number
-An Armstrong number is an n-digit number that is equal to the sum of the nth powers of its digits.
-For Example: 407 = 43 + 03 + 73 = 64 + 0 + 343 = 407
-*/
-int isArmstrong(int a)
-{
-    int num = a;
-    int numberD = numberD(a);
-    
-    int d =0,sum =0,ans = num;
-    while(num>0)
-    {
-        d = num%10;
-        sum = sum + pow(numberD,d);
-        num = num/10;
-    }
-    return (ans == sum);
-
+// Your numberD function definition
+int numberD(int a) {
+    int digitCount = 0;
+    while (a > 0) {
+        digitCount++;
+        a = a / 10;
+    } 
+    return digitCount; 
 }
 
-/* will return if a number is a palindrome */
-int isPalindrome(int a)
-{
-    int  numberD = numberD(a);
+// Your power function definition
+int power(int numberD, int digit) {
+    int i, sum = 1;
+    for (i = 0; i < numberD; i++) {
+        sum = sum * digit;
+    }
+    return sum;
+}
 
-    if(numberD==1)
-    return 1;
+// Your isArmstrong function definition
+int isArmstrong(int a) {
+    int num = a;
+    int digits = numberD(a);
+    
+    int d = 0, sum = 0, ans = num;
+    while (num > 0) {
+        d = num % 10;
+        sum = sum + power(digits, d);
+        num = num / 10;
+    }
+    return (ans == sum);
+}
+
+// Your isPalindrome function definition
+int isPalindrome(int a) {
+    int digits = numberD(a);
+
+    if (digits == 1)
+        return 1;
 
     int temp = a;
     int reverse = 0;
@@ -40,26 +56,4 @@ int isPalindrome(int a)
     }
 
     return (a == reverse);
-}
-
-// my function 
-
-int numberD(int a)
-{
-    int numberD = 0;
-  while(a>0)
-    {
-        numberD++;
-        a= a/10;
-    } 
-    return numberD; 
-}
-int pow(int numberD,int digit)
-{
-    int i,sum = 1;
-    for(i=0;i<numberD;i++)
-    {
-        sum = sum*digit;
-    }
-    return sum;
 }
