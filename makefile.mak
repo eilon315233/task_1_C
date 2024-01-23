@@ -1,4 +1,3 @@
-
 CC = gcc
 FLAGS = -Wall -g
 
@@ -8,7 +7,6 @@ OBJECTS_ACL = advancedClassificationLoop.o
 OBJECTS_ACR = advancedClassificationRecursion.o
 OBJECTS_BC = basicClassification.o
 HEADER = NumClass.h
-
 
 all: loops recursives recursived loopd mains maindloop maindrec
 
@@ -33,7 +31,6 @@ maindloop: $(OBJECTS_MAIN)
 maindrec: $(OBJECTS_MAIN)
 	$(CC) $(FLAGS) -o $@ $< ./libclassrec.so
 
-
 main.o: main.c $(HEADER)
 	$(CC) $(FLAGS) -c main.c
 
@@ -45,7 +42,6 @@ advancedClassificationRecursion.o: advancedClassificationRecursion.c $(HEADER)
 
 basicClassification.o: basicClassification.c $(HEADER)
 	$(CC) $(FLAGS) -fPIC -c basicClassification.c
-
 
 clean:
 	rm -f *.o *.so *.a mains maindloop maindrec
