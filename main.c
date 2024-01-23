@@ -1,57 +1,51 @@
-
 #include <stdio.h>
 #include "NumClass.h"
 
-int main() 
-{
-   int num1,num2; 
+int main() {
+   int num1=0, num2=0; 
+   
+   // Enter 2 positive numbers
+   scanf("%d %d", &num1, &num2);
 
-   //swap
-   if(num1>num2)
-   {
+   // Swap
+   if (num1 > num2) {
       int temp = num1;
       num1 = num2;
       num2 = temp;
    }
-   
-   //Enter 2 positive number
-   scanf("%d %d",&num1,&num2);
 
-
-   //check Armstrong number
-    printf("the Armstrong number are: ")
-   int i;
-   for(i=num1; i<num2; i++)
-   {
-      if(isArmstrong(i));
-      printf("$d",i);
+   // Check Armstrong numbers
+   printf("The Armstrong numbers are: ");
+   for (int i = num1; i <= num2; i++) {
+      if (isArmstrong(i)) {
+         printf("%d ", i);
+      }
    }
 
-   //check Palindrome number
-   printf("the Palindrome number are: ")
-   int i;
-   for(i=num1; i<num2; i++)
-   {
-      if(isPalindrome(i));
-      printf("$d",i);
+   // Check Palindrome numbers
+   printf("\nThe Palindrome numbers are: ");
+   for (int i = num1; i <=num2; i++) {
+      if (isPalindrome(i)) {
+         printf("%d ", i);
+      }
    }
 
-   //check Prime number
-   printf("The Prime numbers are: ")
-   int i;
-   for(i=num1; i<num2; i++)
-   {
-      if(isPrime(i));
-      printf("$d",i);
+   // Check Prime numbers
+   printf("\nThe Prime numbers are: ");
+   for (int i = num1; i <= num2; i++) {
+      if (isPrime(i)) {
+         printf("%d ", i);
+      }
    }
 
-   //check Strong number
-   printf("the Strong number are: ")
-   int i;
-   for(i=num1; i<num2; i++)
-   {
-      if(isStrong(i));
-      printf("$d",i);
+   // Check Strong numbers
+   printf("\nThe Strong numbers are: ");
+   for (int i = num1; i <=num2; i++) {
+      if (isStrong(i)) {
+         printf("%d ", i);
+      }
    }
 
+   printf("\n");
+   return 0;
 }
