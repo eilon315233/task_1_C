@@ -55,4 +55,18 @@ int isPalindrome(int a) {
 
     return isPalindromeHelper(a, a); // Fix: Added 'a' as an argument
 }
-
+/*
+int isArmstrong(int num){
+    int size = 0, cNum = num;
+    while(cNum > 0){ 
+        size++;
+        cNum = cNum/10;    
+    }
+    if(isArmstrongHelper(num, size) == num){ return TRUE; }
+    return FALSE;
+}
+int isArmstrongHelper(int num, int size){
+    if(num < 10){ return pow(num,size); }
+    return pow(num%10,size) + isArmstrongHelper(num/10,size);
+}
+*/
